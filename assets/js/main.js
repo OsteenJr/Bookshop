@@ -84,7 +84,17 @@ let swiperFeatured = new Swiper('.featured-swiper', {
 });
 
 /*=============== NEW SWIPER ===============*/
+let swiperNew = new Swiper('.new-swiper', {
+    loop: true,  // Enables infinite looping of slides.
+    spaceBetween: 16, // Sets the space between slides to 16 pixels.
+    slidesPerView: 'auto', // Automatically adjusts the number of slides visible based on container size.
 
+        breakpoints: {
+        1150: { // Sets custom properties for screens 1150px or wider.
+            slidesPerView: 3, // Displays 3 slides simultaneously in the viewport.
+        }
+    }
+});
 
 /*=============== TESTIMONIAL SWIPER ===============*/
 

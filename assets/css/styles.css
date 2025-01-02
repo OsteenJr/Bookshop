@@ -472,13 +472,125 @@ nav {
 
 
 /*=============== DISCOUNT ===============*/
+.discount-data {
+    text-align: center;
+}
+.discount-title {
+    font-size: var(--h2-font-size);
+    margin-bottom: 1rem;
+}
+.discount-desc {
+    margin-bottom: 1rem;
+}
 
-
+.discount-btn {
+    display: block;
+    width: 150px;
+    background-color: var(--first-color);
+    color: white;
+    padding: 1rem 0;
+    cursor: pointer;
+    justify-self: center; 
+    margin-bottom: 1rem;
+}
+.discount-images {
+    display: flex;
+    justify-content: center;
+}
+.discount-images img {
+    width: 170px;
+}
+.discount-img-1 {
+    transform: translateX(1rem) rotate(-10deg);
+}
+.discount-img-2 {
+    transform: translateX(-1rem) rotate(10deg);
+}
 /*=============== NEW ===============*/
-
-
+.section-title {
+    font-size: var(--h2-font-size);
+}
+.new-card {
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--container-color);
+    padding: 2rem;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    transition: border .4s, background-color .4s;
+} 
+.new-card:nth-child(1) {
+    margin-bottom: 2rem;
+}
+.new-card img {
+    width: 150px;
+}
+.new-title {
+    font-size: var(--h2-font-size);
+    margin-bottom: .5rem;
+}
+.new-prices {
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+.new-discount {
+    color: var(--title-color);
+}
+.new-price {
+    color: var(--text-color);
+    text-decoration: line-through;
+    font-size: var(--small-font-size);
+}
+.new-stars {
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+}
 /*=============== JOIN ===============*/
-
+.join {
+    position: relative;
+    padding-block: 3rem;
+}
+.join-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.join-data {
+    position: relative;
+}
+.join-title {
+    color: var(--white-color);
+}
+.join-form {
+    display: grid;
+    row-gap: 1rem;
+}
+.join-input {
+    padding: 1rem 1rem;
+    background-color: var(--body-color);
+    color: var(--title-color);
+    transition: background-color .4s;
+}
+.join-input::placeholder {
+    color: var(--text-color);
+}
+.join-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--first-color);
+    color: white;
+    cursor: pointer;
+    padding-block: 1rem;
+    text-align: center;
+}
 
 /*=============== TESTIMONIAL ===============*/
 

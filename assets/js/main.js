@@ -63,7 +63,25 @@ let swiperHome = new Swiper('.home-swiper', {
 });
 
 /*=============== FEATURED SWIPER ===============*/
+let swiperFeatured = new Swiper('.featured-swiper', {
+    loop: true,  // Enables infinite looping of slides.
+    spaceBetween: 16, // Sets the space between slides to 16 pixels.
+    grabCursor: true, // Changes the cursor to a "grab" icon for better UX.
+    slidesPerView: 'auto', // Automatically adjusts the number of slides visible based on container size.
+    centeredSlides: 'auto', // Centers the active slide within the viewport.
 
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+        breakpoints: {
+        1150: { // Sets custom properties for screens 1150px or wider.
+            slidesPerView: 4, // Displays 4 slides simultaneously in the viewport.
+            centeredSlides: false, // Aligns the slides to the left (default behavior), instead of centering them.
+        }
+    }
+  
+});
 
 /*=============== NEW SWIPER ===============*/
 

@@ -100,11 +100,47 @@ let swiperNew = new Swiper('.new-swiper', {
 
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up')
+    //When the scroll is higher than 350 viewport height, add the scrollUp Button
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+    : scrollUp.classList.remove('show-scroll');
+}
+window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+// Select all sections on the page that have an 'id' attribute
+const sections = document.querySelectorAll('section[id]')
 
+/* Function to handle adding/removing the 'active-link' class */
+const scrollActive = () => {
+      // Get the current vertical scroll position of the window
+    const scrollDown = window.scrollY
 
+     // Loop through each section to determine its visibility relative to the scroll position
+sections.forEach(current => {
+      // Get the height of the current section
+    const sectionHeight = current.offsetHeight,
+    // Get the top position of the current section relative to the viewport, 
+    // subtracting 58 to account for a fixed header or spacing
+    sectionTop = current.offsetTop - 58,
+    //Get the 'id' attribute of the current section
+    sectionId = current.getAttribute('id'),
+     // Select the corresponding navigation link that points to this section
+    sectionClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']')
+
+    // Check if the current scroll position falls within this section's boundaries
+    if(scrollDown >= sectionTop && scrollDown < sectionTop + sectionHeight) {
+        sectionClass.classList.add('active-link') //add the class active link to the home section
+        } else {
+            sectionClass.classList.remove('active-link')
+            
+    }
+
+})
+}
+// Attach the 'scrollActive' function to the 'scroll' event on the window
+window.addEventListener('scroll', scrollActive)
 /*=============== DARK LIGHT THEME ===============*/ 
 
 

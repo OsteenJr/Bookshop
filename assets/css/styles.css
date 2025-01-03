@@ -137,6 +137,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--header-height);
+    z-index: var(--z-fixed); 
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1); 
 }
 nav {
     display: flex;
@@ -161,7 +164,7 @@ nav {
         width: 100%;
         padding: 1.25rem 4rem;
         background-color: var(--container-color);
-        box-shadow: 0 -8px 32px  hsla(0%, 0%, 0%, 0.1);
+        box-shadow: 0 -8px 32px  hsla(0%, 0%, 0%, 0.1);  
     }
     .nav-list {
         display: flex;
@@ -305,7 +308,9 @@ nav {
 }
 
 /* Active link */
-
+.active-link {
+    color: var(--first-color);
+}
 
 /*=============== SEARCH ===============*/
 
@@ -599,13 +604,41 @@ nav {
 
 
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: .5rem;
+    background-color: hsl(230, 16%, 85%);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: hsl(230, 16%, 65%);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(230, 16%, 50%);
+}
 
 /*=============== SCROLL UP ===============*/
-
+.scrollup {
+    position: fixed;
+    bottom: -50%;
+    right: 1rem;
+    padding: 5px;
+    font-size: 1.25rem;
+    background-color: var(--container-color);
+    box-shadow: 0 2px 8px hsla(0%, 0%, 0%, 0.1);
+    transition: transform .4s, background-color .4s, bottom .4s;
+    color: var(--first-color);
+    display: inline-flex;
+    z-index: var(--z-tooltip);
+}
+.scrollup:hover {
+    transform: translateY(-.5rem);
+}
 
 /* Show Scroll Up */
-
+.show-scroll {
+    bottom: 6rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
